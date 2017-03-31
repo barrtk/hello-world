@@ -91,6 +91,15 @@ function Ball() {
       }
       scoreRight += 1;
     }
+    if(this.velocity.x>0 && this.velocity.y>0 ){
+      this.acceleration = createVector(0.001,0.001);
+    }else if(this.velocity.x<0 && this.velocity.y<0){
+      this.acceleration = createVector(-0.001,-0.001);
+    }else if(this.velocity.x>0 && this.velocity.y<0){
+      this.acceleration = createVector(0.001,-0.001);
+    }else if(this.velocity.x<0 && this.velocity.y>0){
+      this.acceleration = createVector(-0.001,0.001);
+    }
 
   };
 }
