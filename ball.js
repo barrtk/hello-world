@@ -70,13 +70,25 @@ function Ball() {
     if (this.location.x < 0+r/2) {
       this.location.x = width/2;
       this.location.y = height/2;
-      this.velocity = createVector(random(-3,2),random(2,3));
+      angle = random(-4/PI,4/PI);
+      this.velocity.x = 5 * cos(angle);
+      this.velocity.y = 5 * sin(angle);
+
+      if (random(1) < 0.5) {
+        this.velocity.x *= -1;
+      }
       scoreLeft += 1;
     }
     else if (this.location.x > width-r/2) {
       this.location.x = width/2;
       this.location.y = height/2;
-      this.velocity = createVector(random(-3,2),random(2,3));
+      angle = random(-4/PI,4/PI);
+      this.velocity.x = 5 * cos(angle);
+      this.velocity.y = 5 * sin(angle);
+
+      if (random(1) < 0.5) {
+        this.velocity.x *= -1;
+      }
       scoreRight += 1;
     }
 
